@@ -13,9 +13,17 @@ const [todo,setTodo] = useState([    "Go To Gym",
   "Buy lots of toys",
   "Play Lots Of Videogames"])
 
+  function incrementTodos(newtodo){
+
+    const newtodolist = [...todo, newtodo]
+
+    setTodo(newtodolist)
+
+
+  }
   return (
 <main>
-      <Todoinput />
+      <Todoinput incrementTodos = {incrementTodos}/>
       <Todolist todo={todo}/>
 
 </main>
