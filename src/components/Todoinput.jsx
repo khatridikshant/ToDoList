@@ -1,5 +1,6 @@
-export default function Todoinput(){
+export default function Todoinput(props){
 
+    const {todo} = props
     return (
        <header>
         <div className="flex h-10">

@@ -7,14 +7,11 @@ import Todolist from './components/Todolist'
 
 function App() {
 
-  
-  let todo = [
-    "Go To Gym",
-    "Eat lots of veggies and fruits",
-    "Pick Kids From School",
-    "Buy lots of toys",
-    "Play Lots Of Videogames"
-]
+const [todo,setTodo] = useState([    "Go To Gym",
+  "Eat lots of veggies and fruits",
+  "Pick Kids From School",
+  "Buy lots of toys",
+  "Play Lots Of Videogames"])
 
   return (
 <main>
