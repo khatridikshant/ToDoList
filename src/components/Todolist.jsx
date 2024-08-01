@@ -1,8 +1,26 @@
 import React from 'react'
+import TodoCard from './Todocard'
+const TodoList = (props) => {
 
-const TodoList = () => {
+  const {todo} = props
+
+
   return (
-    <div>TodoList</div>
+    <>
+    <div className="px-2">
+    <ul className="list-disc">
+        {
+            todo.map(
+                    (obj,index) => {
+                        return (
+                          <TodoCard className="" key={index}> <span>{obj}</span></TodoCard>
+                        )
+                    }
+            )
+        }
+    </ul>
+</div>
+</>
   )
 }
 
