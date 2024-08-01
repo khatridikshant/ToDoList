@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
-import Todolist from './components/TodoList'
+
 import Todoinput from './components/Todoinput'
+import Todolist from './components/Todolist'
 
 function App() {
 
@@ -11,6 +11,7 @@ function App() {
 <main>
       <Todoinput />
       <Todolist />
+
 </main>
   )
 }
