@@ -5,7 +5,7 @@ export default function Todoinput(props){
     const {todo} = props
 
     const [valueTodo, setInputTodo] = useState('')
-    const {incrementTodos} = props
+    const {incrementTodos, deleteTodos} = props
     return (
        <header>
         <div className="flex h-10">

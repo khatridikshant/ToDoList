@@ -2,7 +2,7 @@ import React from 'react'
 import TodoCard from './Todocard'
 const TodoList = (props) => {
 
-  const {todo} = props
+  const {todo, deleteTodos} = props
 
 
   return (
@@ -13,7 +13,7 @@ const TodoList = (props) => {
             todo.map(
                     (obj,index) => {
                         return (
-                          <TodoCard className="" key={index}> <span>{obj}</span></TodoCard>
+                          <TodoCard className="" deleteTodos = {deleteTodos} key={index} index = {index}> <span>{obj}</span></TodoCard>
                         )
                     }
             )

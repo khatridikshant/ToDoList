@@ -21,10 +21,23 @@ const [todo,setTodo] = useState([    "Go To Gym",
 
 
   }
+
+  function deleteTodos(index){
+      const newList = todo.filter((todo,todoindex) => {
+        return todoindex !== index
+      })
+
+      setTodo(newList)
+  }
+
+  function editTodos(index){
+
+  }
+
   return (
 <main>
-      <Todoinput incrementTodos = {incrementTodos}/>
-      <Todolist todo={todo}/>
+      <Todoinput incrementTodos = {incrementTodos} deleteTodos = {deleteTodos}/>
+      <Todolist todo={todo} deleteTodos= {deleteTodos}/>
 
 </main>
   )
