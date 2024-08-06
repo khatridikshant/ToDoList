@@ -12,7 +12,7 @@ const [todo,setTodo] = useState([    "Go To Gym",
   "Pick Kids From School",
   "Buy lots of toys",
   "Play Lots Of Videogames"])
-
+  const [valueTodo, setInputTodo] = useState('')
   function incrementTodos(newtodo){
 
     const newtodolist = [...todo, newtodo]
@@ -31,13 +31,15 @@ const [todo,setTodo] = useState([    "Go To Gym",
   }
 
   function editTodos(index){
-
+      const editData = todo[index]
+      setInputTodo(editData)
+      deleteTodos(index)
   }
 
   return (
 <main>
-      <Todoinput incrementTodos = {incrementTodos} deleteTodos = {deleteTodos}/>
-      <Todolist todo={todo} deleteTodos= {deleteTodos}/>
+      <Todoinput valueTodo = {valueTodo} setInputTodo = {setInputTodo} incrementTodos = {incrementTodos} deleteTodos = {deleteTodos} todo ={todo} setTodo={setTodo} editTodos = {editTodos}/>
+      <Todolist todo={todo} deleteTodos= {deleteTodos} editTodos = {editTodos}/>
 
 </main>
   )

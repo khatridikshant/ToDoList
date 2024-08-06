@@ -1,16 +1,19 @@
 import React from 'react'
 
 const TodoCard = (props) => {
-  const {children, deleteTodos,index} = props
+  const {children, deleteTodos,index,editTodos} = props
   return (
     <li className="bg-gray-500 rounded py-2 mb-2 mt-2 flex items-center"> 
 
 
 <span className='flex-1'>
-{children} </span>
+{children}  </span>
 
 <span className='flex items-center'>
-  <button>
+  <button onClick={() => {
+
+    editTodos(index)
+  }}>
 <i class="fa-solid fa-pen-to-square ml-2 mr-2"></i></button>
 <button onClick={() => {
   deleteTodos(index)

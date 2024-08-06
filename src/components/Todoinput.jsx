@@ -2,10 +2,10 @@ import { useState } from "react"
 
 export default function Todoinput(props){
 
-    const {todo} = props
+    const {todo,valueTodo,setInputTodo} = props
 
-    const [valueTodo, setInputTodo] = useState('')
-    const {incrementTodos, deleteTodos} = props
+
+    const {incrementTodos, deleteTodos,editTodos} = props
     return (
        <header>
         <div className="flex h-10">
