@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 
@@ -7,16 +7,14 @@ import Todolist from './components/Todolist'
 
 function App() {
 
-const [todo,setTodo] = useState([    "Go To Gym",
-  "Eat lots of veggies and fruits",
-  "Pick Kids From School",
-  "Buy lots of toys",
-  "Play Lots Of Videogames"])
+const [todo,setTodo] = useState([   ])
   const [valueTodo, setInputTodo] = useState('')
+
+
   function incrementTodos(newtodo){
 
     const newtodolist = [...todo, newtodo]
-
+    persistData(newtodolist)
     setTodo(newtodolist)
 
 
@@ -27,6 +25,7 @@ const [todo,setTodo] = useState([    "Go To Gym",
         return todoindex !== index
       })
 
+      persistData(newList)
       setTodo(newList)
   }
 
@@ -34,7 +33,28 @@ const [todo,setTodo] = useState([    "Go To Gym",
       const editData = todo[index]
       setInputTodo(editData)
       deleteTodos(index)
+   
   }
+
+  useEffect(() => {
+
+    if (!localStorage){
+      return
+    }
+    let localTodos = localStorage.getItem('todoList')
+  
+    if (!localTodos) {return}
+  
+    localTodos = JSON.parse(localTodos).todo
+    setTodo(localTodos)
+  }, [])
+  
+  function persistData(newList){
+  
+    localStorage.setItem('todoList',JSON.stringify({todo : newList}))
+  
+  }
+  
 
   return (
 <main>
